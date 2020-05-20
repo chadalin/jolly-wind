@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bc1be286-3842-49c3-a83e-0d6ae451d2d6" name="jolly-wind.ru" url="http://92.53.118.141">
+        <fileTransfer host="92.53.118.141" port="21" rootFolder="/jolly-wind.ru">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
