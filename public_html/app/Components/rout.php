@@ -8,7 +8,9 @@ function rout()
         $r->addRoute('GET', '/index', ['App\Controllers\HomeController', 'index']);
         $r->addRoute('GET', '/admin', ['App\Controllers\AdminController', 'index']);
         $r->addRoute('GET', '/tasks', ['App\Controllers\TaskController', 'index']);
+
         $r->addRoute('GET', '/users', ['App\Controllers\UserController', 'index']);
+        $r->addRoute('GET', '/users{id}', ['App\Controllers\UserController', 'users']);
         // {id} must be a number (\d+)
 
 
