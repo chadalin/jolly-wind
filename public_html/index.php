@@ -1,19 +1,13 @@
 <?php
-if( !session_id() ) @session_start();
+
 require 'vendor/autoload.php';
-require 'app/components/rout.php';
+require 'app/Components/rout.php';
 use DI\Container;
 use DI\ContainerBuilder;
-use League\Plates\Engine;
 use Tracy\Debugger;
-use App\controllers;
-
-Debugger::enable(Debugger::DEVELOPMENT);
-
-
+use App\Controllers;
 $dispatcher = rout();
-
-
+Debugger::enable(Debugger::DEVELOPMENT);
 // Fetch method and URI from somewhere
 $httpMethod = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
@@ -27,11 +21,11 @@ $uri = rawurldecode($uri);
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
-        echo  '404 Not Found';
+        echo "404 Not Found!";
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $allowedMethods = $routeInfo[1];
-        echo  '405 Method Not Allowed';
+        echo "405 Method Not Allowed!";
         break;
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
