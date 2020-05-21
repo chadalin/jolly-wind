@@ -1,12 +1,19 @@
 <?php
 namespace App\Controllers;
 use App\Models\QueryBuilder;
+use App\Models\Auth;
+
+use App\Components\PDOdatabase;
+
 class AdminController
 {
     public $builder;
-    public function __construct(QueryBuilder $builder)
+    public $db;
+    public function __construct(QueryBuilder $builder, PDOdatabase $db)
     {
         $this->builder = $builder;
+        $this->db = $db;
+        var_dump($this->db);
     }
 
     public function index()
