@@ -1,5 +1,9 @@
 <?php
 namespace App\Controllers;
+use App\Models\QueryBuilder;
+use App\Models\Auth;
+use League\Plates\Engine;
+use App\Components\PDOdatabase;
 class UserController
 {
     public function index()
